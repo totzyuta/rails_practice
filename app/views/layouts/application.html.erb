@@ -1,14 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>MyCollection</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <title>My Collection</title>
+
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+
+  <%= stylesheet_link_tag    "application", media: "all" %>
+  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+
 </head>
 <body>
 
-<%= yield %>
+  <!-- ここからナビのエリア -->
+  <nav class = "navbar navbar-default navbar-fixed-top">
+    <div class = "container">
+      <%= link_to 'My Collection', collections_path, :class => "navbar-brand" %>
+      <%= link_to '投稿する', new_collection_path, :class => "btn btn-success navbar-btn" %>
+    </div>
+  </nav>
+  <!-- ここまでナビのエリア -->
+
+
+  <!-- ここからコンテンツエリア -->
+  <div class = "container" style = "padding-top:70px">
+    <!-- ここからお知らせ通知のエリア -->
+    <% if notice %>
+      <div class="alert alert-success alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <p><%= notice %></p>
+      </div>
+    <% end %>
+    <!-- ここまでお知らせ通知のエリア  -->
+    <%= yield %>
+  </div>
+  <!-- ここまでコンテンツエリア -->
 
 </body>
 </html>
+

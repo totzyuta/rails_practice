@@ -1,0 +1,145 @@
+
+/* 全体
+----------------------- */
+body {
+  background-color: #f2f0f0; /* 背景の色 */
+}
+
+
+/* カバー画像
+----------------------- */
+.my-cover {
+  height: 250px; /* カバー画像縦の長さ */
+  background: url("/assets/my_cover.jpg"); /* カバー画像のURL */
+  background-size:cover; /* 縦横比は保持して、背景領域を完全に覆う最小サイズになるように背景画像を拡大縮小する */
+}
+
+.my-cover h3 {
+  margin-left: 200px; /* 余白 */
+  margin-top: 190px; /* 余白 */
+  color: #fff; /* 文字色 */
+  text-shadow: 0 1px 2px #3a3a3a; /* 文字の影 */
+}
+
+/* 自分の画像
+----------------------- */
+.my-thumbnail {
+  position: absolute;
+  top: 70px; /* 画像の位置を設定 */
+  left: 40px; /* 画像の位置を設定 */
+  width: 170px; /* 画像の大きさ */
+  height: 170px; /* 画像の大きさ */
+}
+
+
+/* コレクション
+----------------------- */
+.thumbnail {
+  background-color: white;  /* コレクションの背景色 */
+}
+
+.thumbnailImage img {
+  width: 250px; /* コレクションの幅 */
+  padding: 10px; /* 余白 */
+}
+
+.thumbnail .caption {
+  border-top-width: 1px; /*キャプションボーダーの幅 */
+  border-top-style: dotted; /* キャプションボーダーのスタイル */
+}
+
+/* コレクションをホバーした時のボタン
+----------------------- */
+.thumbnailButton {
+  position: absolute;
+  top: 8px;
+  right: 23px;
+  display: none;  /* 初期状態では隠しておく */
+}
+
+/* 投稿画面のブロック
+----------------------- */
+.post {
+    background-color: white; /* 背景色 */
+    padding: 20px; /* 余白 */
+}
+
+
+/* sign_in、sign_upの画面の設定
+----------------------- */
+.welcom-header {
+  padding-top: 50px; /* 余白 */
+  padding-bottom: 50px; /* 余白 */
+  background: url("/assets/login_bg.jpg"); /* 背景画像のURL */
+  background-size: cover;  /* 縦横比は保持して、背景領域を完全に覆う最小サイズになるように背景画像を拡大縮小する */
+  text-align: center; /* 文字を中央へ */
+}
+
+.welcom-header h1{
+  color: #f8f8f8; /* 文字色 */
+  text-shadow: 0 1px 2px #3a3a3a;
+}
+
+
+/* いいねボタンの設定
+----------------------- */
+.like input{
+  position: absolute;
+  right: 195px;
+}
+
+.like-button {
+  width: 50px; /* ボタンの設定 */
+}
+
+.like-thumbnail-button {
+  width: 20px; /* ボタンの設定 */
+  margin-right: 5px;
+  opacity: 0.6;
+}
+
+
+
+/* モーダルビューの設定
+----------------------- */
+.modal-image img{
+  width: 450px;
+  padding: 10px;
+}
+
+.modal-comment img {
+  float: left;
+  margin-left: 20px;
+  width: 55px;
+}
+
+
+.modal-comment form {
+  margin-left: 90px;
+}
+
+.modal-comment-button {
+ margin-top: 10px;
+}
+
+/* コメントの設定
+----------------------- */
+.comment {
+  min-height: 40px;
+}
+
+.comment img {
+  width: 35px;
+  float: left;
+  margin-right: 10px;
+}
+
+.comment-body {
+  margin-left: 40px;
+  padding-top: 5px;
+}
+
+
+.center{
+  text-align: center;
+}
