@@ -4,7 +4,7 @@ class CollectionsController < ApplicationController
   # GET /collections
   # GET /collections.json
   def index
-    @collections = Collection.all
+    @collections = Collection.all.order(id: :asc)
   end
 
   # GET /collections/1
@@ -28,10 +28,10 @@ class CollectionsController < ApplicationController
 
     respond_to do |format|
       if @collection.save
-        format.html { redirect_to @collection, notice: 'Collection was successfully created.' }
-        format.json { render :show, status: :created, location: @collection }
+        format.html { redirect_to collections_path, notice: 'Collection was successfully created.' }
+        format.json { render action: 'show', status: :created, location: @collection }
       else
-        format.html { render :new }
+        format.html { render action: 'new' }
         format.json { render json: @collection.errors, status: :unprocessable_entity }
       end
     end
@@ -42,10 +42,10 @@ class CollectionsController < ApplicationController
   def update
     respond_to do |format|
       if @collection.update(collection_params)
-        format.html { redirect_to @collection, notice: 'Collection was successfully updated.' }
-        format.json { render :show, status: :ok, location: @collection }
+        format.html { redirect_to collections_path, notice: 'Collection was successfully updated.' }
+        format.json { head :no_content }
       else
-        format.html { render :edit }
+        format.html { render action: 'edit' }
         format.json { render json: @collection.errors, status: :unprocessable_entity }
       end
     end
@@ -56,7 +56,7 @@ class CollectionsController < ApplicationController
   def destroy
     @collection.destroy
     respond_to do |format|
-      format.html { redirect_to collections_url, notice: 'Collection was successfully destroyed.' }
+      format.html { redirect_to collections_url }
       format.json { head :no_content }
     end
   end

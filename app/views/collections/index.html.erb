@@ -1,27 +1,37 @@
-<h1>Listing collections</h1>
+<!-- ここからヘッダー画像のエリア -->
+<div class = "row">
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-body my-cover">
+        <h3>@Life is Tech!</h3>
+      </div>
+      <div class="panel-footer"></div>
+      <%= image_tag('my_thumbnail.jpg', :class => "my-thumbnail img-thumbnail") %>
+    </div>
+  </div>
+</div>
+<!-- ここまでヘッダー画像のエリア -->
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Body</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<h4>@Life is Tech!のコレクション</h4>
 
-  <tbody>
-    <% @collections.each do |collection| %>
-      <tr>
-        <td><%= collection.title %></td>
-        <td><%= collection.body %></td>
-        <td><%= link_to 'Show', collection %></td>
-        <td><%= link_to 'Edit', edit_collection_path(collection) %></td>
-        <td><%= link_to 'Destroy', collection, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Collection', new_collection_path %>
+<!-- ここからコレクションのエリア -->
+<div class = "row">
+  <% @collections.each do |collection| %>
+  <div class="col-md-3">
+    <div class="thumbnail">
+      <div class = "thumbnailButton">
+        <%= link_to '編集', edit_collection_path(collection), :class => "btn btn-info"%>
+        <%= link_to '削除', collection, :class => "btn btn-danger", method: :delete, data: { confirm: '本当に消しますか?' } %>
+      </div>
+      <div class="thumbnailImage">
+        <%= image_tag('sample.jpg') %>
+      </div>
+      <div class="caption">
+        <h4><%= collection.title %></h4>
+        <p><%= collection.body %></p>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+<!-- ここまでコレクションのエリア -->

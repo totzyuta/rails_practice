@@ -7,6 +7,7 @@ $(window).load(function(){
 });
 
 
+
 // サムネイルをホバーした時、ボタンをfeadIn, fadeOutする処理
  $(function(){
  	$('.thumbnail').hover(
