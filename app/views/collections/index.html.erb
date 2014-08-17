@@ -3,7 +3,7 @@
   <div class="col-md-12">
     <div class="panel panel-default">
       <div class="panel-body my-cover">
-        <h3>@Life is Tech!</h3>
+        <h3>@totz</h3>
       </div>
       <div class="panel-footer"></div>
       <%= image_tag('my_thumbnail.jpg', :class => "my-thumbnail img-thumbnail") %>
@@ -12,7 +12,7 @@
 </div>
 <!-- ここまでヘッダー画像のエリア -->
 
-<h4>@Life is Tech!のコレクション</h4>
+<h4>@totz's collection</h4>
 
 <!-- ここからコレクションのエリア -->
 <div class = "row">
@@ -24,7 +24,7 @@
         <%= link_to '削除', collection, :class => "btn btn-danger", method: :delete, data: { confirm: '本当に消しますか?' } %>
       </div>
       <div class="thumbnailImage">
-        <%= image_tag('sample.jpg') %>
+        <%= image_tag(collection.picture_url) if collection.picture.present? %>
       </div>
       <div class="caption">
         <h4><%= collection.title %></h4>
